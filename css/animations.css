@@ -1,0 +1,411 @@
+
+/* ================================================
+   BRASA TATTOO 3.0
+   ANIMATIONS.CSS
+================================================ */
+
+:root {
+  --motion: cubic-bezier(.22,1,.36,1);
+}
+
+/* 01 — ANIMAÇÕES BASE */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes softFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes tickerMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* 02 — ELEMENTOS AO ROLAR */
+
+/*
+   Com JavaScript:
+   .js-enabled ativa o sistema.
+   .is-visible mostra cada seção.
+*/
+
+.js-enabled .reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity .85s var(--motion),
+    transform .85s var(--motion);
+}
+
+.js-enabled .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 03 — HERO */
+
+.hero-copy {
+  animation: fadeUp 1s var(--motion) both;
+}
+
+.hero-photo {
+  animation: scaleIn 1.1s var(--motion) .15s both;
+}
+
+.hero-photo img {
+  transition: transform 1s var(--motion);
+}
+
+.hero-photo:hover img {
+  transform: scale(1.035);
+}
+
+.hero-bottom {
+  animation: fadeIn 1s ease .6s both;
+}
+
+.hero-gothic {
+  text-shadow: 0 0 60px rgba(55,180,93,.08);
+}
+
+/* 04 — FAIXA ANIMADA */
+
+.ticker-track {
+  animation: tickerMove 26s linear infinite;
+}
+
+.ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+/* 05 — HEADER */
+
+.header {
+  transition:
+    background .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+}
+
+.header.is-scrolled {
+  background: rgba(5,8,5,.97);
+  box-shadow: 0 12px 35px rgba(0,0,0,.3);
+  border-color: var(--green-line);
+}
+
+.wordmark-icon {
+  display: inline-block;
+  transition: transform .5s var(--motion);
+}
+
+.wordmark:hover .wordmark-icon {
+  transform: rotate(90deg);
+}
+
+.nav a {
+  transition: color .25s ease;
+}
+
+.header-cta {
+  transition:
+    background .3s ease,
+    transform .3s var(--motion);
+}
+
+.header-cta:hover {
+  background: var(--green-light);
+  transform: translateY(-2px);
+}
+
+/* 06 — BOTÕES */
+
+.btn {
+  transition:
+    transform .35s var(--motion),
+    background .35s ease,
+    color .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+}
+
+.btn-green:hover {
+  background: var(--green-light);
+  box-shadow: 0 12px 35px rgba(55,180,93,.14);
+}
+
+.btn-outline:hover {
+  background: rgba(55,180,93,.1);
+  border-color: var(--green);
+}
+
+.btn:active {
+  transform: scale(.98);
+}
+
+.btn span {
+  display: inline-block;
+  transition: transform .3s var(--motion);
+}
+
+.btn:hover span {
+  transform: translate(4px,-3px);
+}
+
+.text-link {
+  transition: color .3s ease;
+}
+
+.text-link:hover {
+  color: var(--white);
+}
+
+/* 07 — FOTO DO ARTISTA */
+
+.artist-media {
+  overflow: hidden;
+}
+
+.artist-media > img {
+  transition: transform .85s var(--motion);
+}
+
+.artist-media:hover > img {
+  transform: scale(1.045);
+}
+
+.artist-stamp {
+  transition: transform .4s var(--motion);
+}
+
+.artist-media:hover .artist-stamp {
+  transform: translateY(-8px);
+}
+
+/* 08 — ESPECIALIDADES */
+
+.style-card {
+  transition:
+    transform .5s var(--motion),
+    border-color .4s ease;
+}
+
+.style-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--green-line);
+}
+
+.style-card > img {
+  transition: transform .85s var(--motion);
+}
+
+.style-card:hover > img {
+  transform: scale(1.055);
+}
+
+.style-card-content a {
+  transition: color .3s ease;
+}
+
+.style-card-content a:hover {
+  color: var(--white);
+}
+
+/* 09 — FRASE DE IMPACTO */
+
+.quote-symbol {
+  animation: softFloat 3.5s ease-in-out infinite;
+}
+
+/* 10 — PORTFÓLIO */
+
+.filter-btn {
+  transition:
+    background .25s ease,
+    color .25s ease,
+    border-color .25s ease,
+    transform .25s ease;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+}
+
+.gallery-item {
+  transition:
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+.gallery-item:hover {
+  border-color: var(--green);
+  box-shadow: 0 16px 35px rgba(0,0,0,.35);
+}
+
+.gallery-item img {
+  transition: transform .65s var(--motion);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-cover {
+  transition: padding-bottom .4s var(--motion);
+}
+
+.gallery-item:hover .gallery-cover {
+  padding-bottom: 25px;
+}
+
+/* 11 — LIGHTBOX */
+
+.lightbox:not([hidden]) {
+  animation: fadeIn .25s ease both;
+}
+
+.lightbox:not([hidden]) .lightbox-body {
+  animation: scaleIn .35s var(--motion) both;
+}
+
+.lightbox-close,
+.lightbox-arrow {
+  transition:
+    background .3s ease,
+    border-color .3s ease,
+    color .3s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-arrow:hover {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--bg);
+}
+
+/* 12 — ETAPAS */
+
+.step {
+  transition:
+    transform .4s var(--motion),
+    border-color .4s ease;
+}
+
+.step:hover {
+  transform: translateY(-7px);
+  border-color: var(--green-line);
+}
+
+.step > span {
+  transition: color .3s ease;
+}
+
+.step:hover > span {
+  color: var(--green-light);
+}
+
+/* 13 — FORMULÁRIO */
+
+.booking-form {
+  transition: border-color .35s ease;
+}
+
+.booking-form:focus-within {
+  border-color: var(--green);
+}
+
+.field input,
+.field select,
+.field textarea {
+  transition:
+    border-color .3s ease,
+    background .3s ease;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  background: var(--surface);
+}
+
+/* 14 — LOCALIZAÇÃO */
+
+.location-poster {
+  transition:
+    border-color .4s ease,
+    box-shadow .4s ease;
+}
+
+.location-poster:hover {
+  border-color: var(--green);
+  box-shadow: 0 0 40px rgba(55,180,93,.07);
+}
+
+/* 15 — MENU MOBILE */
+
+.menu-toggle span {
+  transition: transform .3s ease;
+}
+
+.menu-toggle.is-active span:first-child {
+  transform: translateY(4.5px) rotate(45deg);
+}
+
+.menu-toggle.is-active span:last-child {
+  transform: translateY(-4.5px) rotate(-45deg);
+}
+
+/* 16 — REDUZIR MOVIMENTOS */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js-enabled .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

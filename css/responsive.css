@@ -1,0 +1,673 @@
+
+/* ================================================
+   BRASA TATTOO 3.0
+   RESPONSIVE.CSS
+================================================ */
+
+/* 01 — NOTEBOOKS */
+
+@media (max-width: 1250px) {
+
+  .nav {
+    gap: 15px;
+  }
+
+  .nav > a {
+    font-size: 10px;
+  }
+
+  .hero-grid {
+    gap: 35px;
+  }
+
+  .hero-gothic {
+    font-size: clamp(90px, 10vw, 140px);
+  }
+
+  .hero-modern {
+    font-size: clamp(90px, 10vw, 145px);
+  }
+
+  .split,
+  .booking-grid,
+  .location-grid {
+    gap: 55px;
+  }
+}
+
+/* 02 — TABLETS GRANDES */
+
+@media (max-width: 1050px) {
+
+  :root {
+    --header-height: 75px;
+  }
+
+  .section {
+    padding: 95px 0;
+  }
+
+  /* MENU */
+
+  .header-cta {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex !important;
+    z-index: 1002;
+  }
+
+  .nav {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    height: calc(100svh - var(--header-height));
+    z-index: 1001;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    padding: 30px;
+    overflow-y: auto;
+
+    background: rgba(8,10,8,.99);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-12px);
+
+    transition:
+      opacity .3s ease,
+      visibility .3s ease,
+      transform .3s ease;
+  }
+
+  .nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav > a {
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 31px;
+    font-weight: 800;
+  }
+
+  .nav .nav-mobile-cta {
+    display: inline-block !important;
+    margin-top: 15px;
+    color: var(--green-light);
+  }
+
+  /* HERO */
+
+  .hero-grid {
+    gap: 30px;
+  }
+
+  .hero-gothic {
+    font-size: clamp(85px, 10vw, 120px);
+  }
+
+  .hero-modern {
+    font-size: clamp(80px, 10vw, 125px);
+  }
+
+  .hero-photo {
+    min-height: 410px;
+    height: 550px;
+  }
+
+  /* GALERIA */
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0,1fr));
+  }
+
+  /* ETAPAS */
+
+  .steps {
+    gap: 14px;
+  }
+
+  .step {
+    padding: 25px;
+  }
+
+  /* RODAPÉ */
+
+  .footer-top {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+}
+
+/* 03 — TABLETS */
+
+@media (max-width: 800px) {
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .section-title {
+    font-size: clamp(60px, 9vw, 82px);
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  /* HERO */
+
+  .hero {
+    min-height: 0;
+    padding-top: calc(var(--header-height) + 65px);
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .hero-copy {
+    padding: 0;
+  }
+
+  .hero-topline {
+    margin-top: 35px;
+  }
+
+  .hero-gothic {
+    font-size: clamp(105px, 17vw, 150px);
+  }
+
+  .hero-modern {
+    font-size: clamp(100px, 16vw, 145px);
+  }
+
+  .hero-photo {
+    width: 100%;
+    max-width: 650px;
+    height: 600px;
+    margin-inline: auto;
+  }
+
+  /* ARTISTA */
+
+  .split {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .artist-media {
+    width: 100%;
+    max-width: 570px;
+    margin-inline: auto;
+  }
+
+  /* ESPECIALIDADES */
+
+  .styles-grid {
+    gap: 15px;
+  }
+
+  .style-card {
+    min-height: 480px;
+  }
+
+  .style-card-content {
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+  }
+
+  .style-card h3 {
+    font-size: 65px;
+  }
+
+  /* GALERIA */
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+
+  /* ORÇAMENTO */
+
+  .booking-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .booking-intro {
+    position: static;
+  }
+
+  /* LOCALIZAÇÃO */
+
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .location-poster {
+    min-height: 370px;
+  }
+}
+
+/* 04 — CELULARES */
+
+@media (max-width: 600px) {
+
+  :root {
+    --header-height: 68px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .kicker,
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .section-title {
+    font-size: clamp(54px, 12vw, 73px);
+  }
+
+  /* HEADER */
+
+  .wordmark {
+    font-size: 29px;
+  }
+
+  .wordmark-icon {
+    font-size: 25px;
+  }
+
+  /* HERO */
+
+  .hero {
+    padding-top: 120px;
+    padding-bottom: 25px;
+  }
+
+  .hero-topline {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    margin-top: 30px;
+  }
+
+  .hero-gothic {
+    font-size: clamp(92px, 21vw, 130px);
+  }
+
+  .hero-modern {
+    font-size: clamp(88px, 20vw, 125px);
+    letter-spacing: -2px;
+  }
+
+  .hero-lead {
+    font-size: 17px;
+  }
+
+  .hero-sub {
+    font-size: 13px;
+  }
+
+  .hero .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero .btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero-photo {
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 4/5;
+  }
+
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-bottom {
+    padding-top: 25px;
+  }
+
+  .hero-bottom > span {
+    display: none;
+  }
+
+  /* FAIXA */
+
+  .ticker {
+    padding: 14px 0;
+  }
+
+  .ticker-track span {
+    font-size: 21px;
+  }
+
+  /* ARTISTA */
+
+  .artist-stamp {
+    right: 0;
+    font-size: 24px;
+  }
+
+  .about-content .large-copy {
+    font-size: 18px;
+  }
+
+  .tags {
+    gap: 7px;
+  }
+
+  .tags span {
+    font-size: 13px;
+    padding: 7px 11px;
+  }
+
+  /* ESPECIALIDADES */
+
+  .styles-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .style-card {
+    min-height: 490px;
+  }
+
+  .style-card h3 {
+    font-size: 75px;
+  }
+
+  /* FRASE */
+
+  .quote-band {
+    padding: 80px 0;
+  }
+
+  .quote-band p {
+    font-size: clamp(55px, 12vw, 77px);
+  }
+
+  .quote-band em {
+    font-size: 1em;
+  }
+
+  .quote-mark {
+    font-size: 9px;
+  }
+
+  /* PORTFÓLIO */
+
+  .filters {
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .filter-btn {
+    padding: 9px 12px;
+    font-size: 11px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 8px;
+  }
+
+  .gallery-item {
+    aspect-ratio: 3/4;
+  }
+
+  .gallery-cover {
+    padding: 35px 10px 11px;
+    font-size: 13px;
+    gap: 5px;
+  }
+
+  .gallery-cover span:last-child {
+    font-size: 18px;
+  }
+
+  .gallery-footer .btn {
+    width: 100%;
+  }
+
+  /* LIGHTBOX */
+
+  .lightbox {
+    padding: 65px 12px 100px;
+  }
+
+  .lightbox-body {
+    max-width: 100%;
+  }
+
+  .lightbox-body img {
+    max-height: 68svh;
+  }
+
+  .lightbox-close {
+    top: 15px;
+    right: 15px;
+  }
+
+  .lightbox-arrow {
+    width: 42px;
+    height: 42px;
+  }
+
+  .lightbox-arrow.prev,
+  .lightbox-arrow.next {
+    top: auto;
+    bottom: 25px;
+    transform: none;
+  }
+
+  .lightbox-arrow.prev {
+    left: calc(50% - 58px);
+  }
+
+  .lightbox-arrow.next {
+    right: calc(50% - 58px);
+  }
+
+  /* PROCESSO */
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .step {
+    padding: 27px;
+  }
+
+  .step > span {
+    font-size: 65px;
+  }
+
+  /* ORÇAMENTO */
+
+  .booking-form {
+    padding: 23px 18px;
+    gap: 18px;
+  }
+
+  .form-head {
+    font-size: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    font-size: 16px;
+  }
+
+  /* LOCALIZAÇÃO */
+
+  .location-poster {
+    min-height: 300px;
+    padding: 30px 15px;
+  }
+
+  .location-poster strong {
+    font-size: 75px;
+  }
+
+  .location .actions .btn {
+    width: 100%;
+  }
+
+  /* CONTATO FINAL */
+
+  .final-cta {
+    padding: 90px 0;
+  }
+
+  .final-cta h2 {
+    font-size: clamp(60px, 12vw, 83px);
+  }
+
+  .final-cta .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .final-cta .btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* RODAPÉ */
+
+  .footer {
+    padding-top: 60px;
+  }
+
+  .footer-top {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 30px 15px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+    font-size: 38px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* 05 — CELULARES PEQUENOS */
+
+@media (max-width: 380px) {
+
+  .container {
+    width: calc(100% - 26px);
+  }
+
+  .hero-gothic {
+    font-size: 84px;
+  }
+
+  .hero-modern {
+    font-size: 77px;
+  }
+
+  .section-title {
+    font-size: 50px;
+  }
+
+  .style-card h3 {
+    font-size: 65px;
+  }
+
+  .gallery-cover {
+    font-size: 11px;
+  }
+
+  .location-poster strong {
+    font-size: 63px;
+  }
+}
+
+/* 06 — CELULAR NA HORIZONTAL */
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+  .nav {
+    justify-content: flex-start;
+  }
+
+  .hero {
+    min-height: 0;
+  }
+}
+
+/* 07 — DISPOSITIVOS COM TOQUE */
+
+@media (hover: none) {
+
+  .gallery-item img,
+  .style-card > img {
+    transform: none;
+  }
+
+  .btn:hover,
+  .style-card:hover,
+  .step:hover {
+    transform: none;
+  }
+}
+
+/* 08 — MOVIMENTO REDUZIDO */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .js-enabled .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .ticker-track {
+    animation: none !important;
+  }
+}
